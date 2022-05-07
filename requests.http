@@ -1,1 +1,7 @@
+### ACTORS show
 GET http://localhost:3000/actors/3
+
+
+### MOVIES index
+
+GET http://localhost:3000/movies
