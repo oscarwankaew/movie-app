@@ -1,7 +1,22 @@
 ### ACTORS show
-GET http://localhost:3000/actors/3
+GET http://localhost:3000/actors/1
 
 
 ### MOVIES index
 
 GET http://localhost:3000/movies
+
+### MOVIES show
+
+GET http://localhost:3000/movies/1
+
+### MOVIES create
+
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+    "title": "Pirates of the Caribbean",
+    "year": 2003,
+    "plot": "Capt. Jack Sparrow arrives at Port Royal in the Caribbean without a ship or crew. His timing is inopportune, however, because later that evening the town is besieged by a pirate ship. The pirates kidnap the governor's daughter, Elizabeth, who's in possession of a valuable coin that is linked to a curse that has transformed the pirates into the undead. A gallant blacksmith in love with Elizabeth allies with Sparrow in pursuit of the pirates."
+}
