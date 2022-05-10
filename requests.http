@@ -20,3 +20,16 @@ Content-Type: application/json
     "year": 2003,
     "plot": "Capt. Jack Sparrow arrives at Port Royal in the Caribbean without a ship or crew. His timing is inopportune, however, because later that evening the town is besieged by a pirate ship. The pirates kidnap the governor's daughter, Elizabeth, who's in possession of a valuable coin that is linked to a curse that has transformed the pirates into the undead. A gallant blacksmith in love with Elizabeth allies with Sparrow in pursuit of the pirates."
 }
+
+### MOVIES update
+
+PATCH http://localhost:3000/movies/3
+Content-Type: application/json
+
+{
+    "year": 2017
+}
+
+### MOVIES destroy
+
+DELETE http://localhost:3000/movies/4
