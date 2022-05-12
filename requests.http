@@ -1,6 +1,36 @@
 ### ACTORS show
 GET http://localhost:3000/actors/1
 
+### ACTORS index
+
+GET http://localhost:3000/actors
+
+### ACTORS create
+
+POST http://localhost:3000/actors
+Content-Type: application/json
+
+{
+  "first_name": "",
+  "last_name": "",
+  "known_for": "",
+  "gender": "",
+  "age": 1  
+}
+
+### ACTORS update
+
+PATCH http://localhost:3000/actors/1
+Content-Type: application/json
+
+{
+    
+}
+
+### ACTORS delete
+
+DELETE http://localhost:3000/actors/3
+
 
 ### MOVIES index
 
