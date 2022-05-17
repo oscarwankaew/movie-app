@@ -1,12 +1,12 @@
 class ActorsController < ApplicationController
   def show
-    actor = Actor.find_by(id: params["id"])
-    render json: actor.as_json
+    @actor = Actor.find_by(id: params["id"])
+    render template: "actors/show"
   end
 
   def index
-    actor = Actor.all
-    render json: actor.as_json
+    @actors = Actor.all
+    render template: "actors/index"
   end
 
   def create
@@ -19,7 +19,8 @@ class ActorsController < ApplicationController
       movie_id: params["movie_id"],
     )
     actor.save
-    render json: actor.as_json
+    @actor = actor
+    render template: "actors/show"
   end
 
   def update
@@ -31,7 +32,8 @@ class ActorsController < ApplicationController
     actor.age = params["age"] || actor.age
     actor.movie_id = params["movie_id"] || actor.movie_id
     actor.save
-    render json: actor.as_json
+    @actor = actor
+    render template: "actors/show"
   end
 
   def destroy
