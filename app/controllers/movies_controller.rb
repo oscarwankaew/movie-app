@@ -2,13 +2,13 @@ class MoviesController < ApplicationController
   before_action :authenticate_admin, except: [:index, :show]
 
   def index
-    movies = Movie.all
-    render json: movies.as_json
+    @movies = Movie.all
+    render template: "movies/index"
   end
 
   def show
-    movie = Movie.find_by(id: params["id"])
-    render json: movie.as_json
+    @movie = Movie.find_by(id: params["id"])
+    render template: "movies/show"
   end
 
   def create
@@ -20,7 +20,8 @@ class MoviesController < ApplicationController
       english: params["english"],
     )
     if movie.save
-      render json: movie.as_json
+      @movie = movie
+      render template: "movies/show"
     else
       render json: { errors: movie.errors.full_messages }, status: :expectation_failed
     end
@@ -34,7 +35,8 @@ class MoviesController < ApplicationController
     movie.director = params["director"] || movie.director
     movie.english = params["english"] || movie.english
     if movie.save
-      render json: movie.as_json
+      @movie = movie
+      render template: "movies/show"
     else
       render json: { errors: movie.errors.full_messages }, status: :expectation_failed
     end
