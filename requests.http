@@ -1,14 +1,25 @@
+#########
+
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTMyNDA1ODN9.7xhpR6T-zkUdV9Pqzbr4mnM-CtpZC-3a9HnhdhHhd-Q
+
+#########
+
+
+
 ### ACTORS show
 GET http://localhost:3000/actors/1.json
+Authorization: Bearer {{jwt}}
 
 ### ACTORS index
 
 GET http://localhost:3000/actors.json
+Authorization: Bearer {{jwt}}
 
 ### ACTORS create
 
 POST http://localhost:3000/actors.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
   "first_name": "",
@@ -23,6 +34,7 @@ Content-Type: application/json
 
 PATCH http://localhost:3000/actors/1.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
     
@@ -31,20 +43,23 @@ Content-Type: application/json
 ### ACTORS delete
 
 DELETE http://localhost:3000/actors/3
-
+Authorization: Bearer {{jwt}}
 
 ### MOVIES index
 
 GET http://localhost:3000/movies
+Authorization: Bearer {{jwt}}
 
 ### MOVIES show
 
 GET http://localhost:3000/movies/1
+Authorization: Bearer {{jwt}}
 
 ### MOVIES create
 
 POST http://localhost:3000/movies
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
     "title": "Pirates of the Caribbean",
@@ -56,6 +71,7 @@ Content-Type: application/json
 
 PATCH http://localhost:3000/movies/3
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
     "year": 2017
@@ -64,6 +80,8 @@ Content-Type: application/json
 ### MOVIES destroy
 
 DELETE http://localhost:3000/movies/4
+Authorization: Bearer {{jwt}}
+
 
 ### Users create (signup)
 POST http://localhost:3000/users.json
