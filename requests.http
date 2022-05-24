@@ -1,6 +1,6 @@
 #########
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTMyNDA1ODN9.7xhpR6T-zkUdV9Pqzbr4mnM-CtpZC-3a9HnhdhHhd-Q
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTM0MDQ3NDJ9.Tbl_438vw17FLQ4WRkUixO1Zw3vi35sG2uwxPXJPbxM
 
 #########
 
@@ -101,4 +101,13 @@ Content-Type: application/json
 {
   "email": "test@test.com",
   "password": "password"
+}
+
+### MovieGenre create
+GET http://localhost:3000/movie_genres
+Content-Type: application/json
+
+{
+  "genre_id": ,
+  "movie_id": 
 }
